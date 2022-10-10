@@ -10,10 +10,10 @@
 ##### Table of Content
 
 1. [Introduction](#overview)
-1. [Getting Started](#getting-started)
+2. [Getting Started](#getting-started)
     - [Datasets](#datasets)
     - [Installation](#installation)
-1. [Experiments](#experiments)
+3. [Experiments](#experiments)
     - [Training & Testing](#training-and-testing)
 
 
