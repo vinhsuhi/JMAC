@@ -1,4 +1,4 @@
-# [JMAC for OpenEA_dataset_v1.1 dataset](https://www.pytorch.org)
+# [JMAC for DBPv1 dataset](https://www.pytorch.org)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=flat-square)](https://www.pytorch.org)
 [![language-python3](https://img.shields.io/badge/Language-Python3-blue.svg?style=flat-square)](https://www.python.org/)
 [![made-with-Pytorch](https://img.shields.io/badge/Made%20with-Pytorch-red.svg?style=flat-square)](https://www.pytorch.org/)
@@ -18,7 +18,7 @@
 
 ## Overview
 
-We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/) to implement a Knowledge Graph Matching algorithm named **OpenEA_JMAC** for the KG alignment dataset OpenEA_dataset_v1.1. 
+We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/) to implement a Knowledge Graph Matching algorithm named **OpenEA_JMAC** for the KG alignment dataset DBPv1. 
 
 
 ## Code Tree Description
