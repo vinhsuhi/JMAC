@@ -60,6 +60,8 @@ datasetdbp5l/:
 
 Before running the code, please download the pretrained word embedder [wiki-news-300d-1M.vec.zip](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip) and extract it to 'JMAC/.'
 
+We also develop a version for running KG alignment on the [DPBv1](https://www.dropbox.com/s/nzjxbam47f9yk3d/OpenEA_dataset_v1.1.zip?dl=0). Please try [JMAC_DPBv1](https://github.com/vinhsuhi/JMAC/tree/master/JMAC_DPB1) to reproduce our alignment results on the DPBv1 dataset.
+
 
 ### Installation:
 ```
