@@ -31,7 +31,7 @@ Details of the model architecture and experimental results can be found in [our 
 @article{tong2022jmac,
   title={Joint Multilingual Knowledge Graph Completion and Alignment},
   author={Tong, Vinh and Nguyen, Dat Quoc and Trung, Huynh Thanh and Nguyen, Thanh Tam and Nguyen, Quoc Viet Hung and Mathias, Niepert},
-  journal={Findings of the Association for Computational Linguistics: EMNLP 2022},
+  journal={Findings of the Association for Computational Linguistics: Findings of EMNLP 2022},
   year={2022}
 }
 ```
