@@ -1,0 +1,8 @@
+python==3.7
+torch==1.12
+torch_geometric
+pandas
+tqdm
+scikit-learn
+scipy
+matplotlib

@@ -1,0 +1,8 @@
+pandas==0.24.2
+scikit-learn
+numpy
+scipy
+matplotlib
+tqdm
+torch-scatter
+matplotlib
