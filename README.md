@@ -15,6 +15,7 @@
     - [Installation](#installation)
 3. [Experiments](#experiments)
     - [Training & Testing](#training-and-testing)
+4. [Citations](#citations)
 
 
 # Overview
@@ -26,17 +27,6 @@ We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/)
 </p>
 
 Details of the model architecture and experimental results can be found in [our following paper]():
-
-```
-@article{tong2022jmac,
-  title={Joint Multilingual Knowledge Graph Completion and Alignment},
-  author={Tong, Vinh and Nguyen, Dat Quoc and Trung, Huynh Thanh and Nguyen, Thanh Tam and Nguyen, Quoc Viet Hung and Mathias, Niepert},
-  journal={Findings of the Association for Computational Linguistics: Findings of EMNLP 2022},
-  year={2022}
-}
-```
-
-**Please CITE** our paper whenever our model implementation is used to help produce published results or incorporated into other software.
 
 ## Getting Started
 
@@ -81,3 +71,19 @@ To reproduce our experiments, please use the following script:
 ```
 python train.py --data_path datasetdbp5l/ --target_language ja 
 ```
+## Citations
+
+
+```
+@article{tong2022jmac,
+  title={Joint Multilingual Knowledge Graph Completion and Alignment},
+  author={Tong, Vinh and Nguyen, Dat Quoc and Trung, Huynh Thanh and Nguyen, Thanh Tam and Nguyen, Quoc Viet Hung and Mathias, Niepert},
+  journal={Findings of the Association for Computational Linguistics: Findings of EMNLP 2022},
+  year={2022}
+}
+```
+
+**Please CITE** our paper whenever our model implementation is used to help produce published results or incorporated into other software.
+
+
+
