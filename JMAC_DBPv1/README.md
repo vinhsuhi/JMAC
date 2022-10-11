@@ -9,28 +9,16 @@
 
 ## Table of contents
 1. [Overview](#overview)
-2. [Code Tree Description](#code-tree-description)
-3. [Dataset](#dataset)
-4. [Dependencies](#dependencies)
-5. [Usage](#usage)
-6. [Citation](#citation)
+2. [Dataset](#dataset)
+3. [Dependencies](#dependencies)
+4. [Usage](#usage)
+5. [Citation](#citation)
 
 
 ## Overview
 
 We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/) to implement a Knowledge Graph Matching algorithm named **OpenEA_JMAC** for the KG alignment dataset DBPv1. 
 
-
-## Code Tree Description
-
-```
-OpenEA_dataset_v1.1/: where we put our data, you must download data first and decompress it to achieve this folder
-trainer/: where we put our trainer
-models/:
-├── neural/: where we implement our GNN (alignment-based channel)
-├── trans/: where we implement our shallow model (transitivity-based channel)
-modules/: for other purpose such as load data, compute alignment results...
-```
 
 ## Dataset
 
