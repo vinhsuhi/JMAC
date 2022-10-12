@@ -12,10 +12,11 @@ def parse_triples(triples):
 
 
 class KG:
-    def __init__(self, relation_triples):
+    def __init__(self, relation_triples, attribute_triples):
         """
         This class's objects will be defined in KGs class
         relation_triples: ids_version
+        attribute_triples: ids_version
         """
 
         self.entities_set, self.entities_list = None, None
@@ -53,7 +54,7 @@ class KG:
         self.lp_test_all = None
     
         self.set_relations(relation_triples)
-        #self.set_attributes(attribute_triples)
+        self.set_attributes(attribute_triples)
 
         
 
