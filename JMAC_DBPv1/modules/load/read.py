@@ -191,6 +191,10 @@ def read_relation_triples(file_path, logger):
 
 
 def read_links(file_path, logger):
+    if not os.path.exists(file_path):
+        logger.info('{} does not exist'.format(file_path))
+        return None
+        
     logger.info("read links: {}".format(file_path))
     links = list()
     refs = list()
