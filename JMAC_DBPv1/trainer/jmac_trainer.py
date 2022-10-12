@@ -269,7 +269,7 @@ class Trainer(BasicModel):
                     flag = self.valid_(self.args.stop_metric, align_emb, in_list=self.prox_acc)
 
                     self.flag1, self.flag2, self.early_stop = early_stop(self.flag1, self.flag2, flag, self.logger)
-                    if self.early_stop and step > 100:
+                    if self.early_stop:
                         stop = True 
                         break
             if stop:
@@ -344,6 +344,10 @@ class Trainer(BasicModel):
         """
         self.word_embed = self.args.word_embed # '../../datasets/wiki-news-300d-1M.vec'
         name = "{}_ent_emb.npy".format(self.args.training_data)
+        if self.args.no_attr_info:
+            name = "{}_ent_emb_no_att.npy".format(self.args.training_data)
+        elif self.args.no_name_info:
+            name = "{}_ent_emb_no_name.npy".format(self.args.training_data)
         if not os.path.exists(name):
             _, _, self.local_name_vectors = self._get_desc_input()
             np.save(name, self.local_name_vectors)
@@ -373,17 +377,54 @@ class Trainer(BasicModel):
         return triple_list + additional_triples
 
 
-    def _get_local_name_by_name_triple(self, name_attribute_list=None): 
-        if name_attribute_list is None:
-            if 'D_Y' in self.args.training_data:
-                name_attribute_list = {'skos:prefLabel', 'http://dbpedia.org/ontology/birthName'}
-            elif 'D_W' in self.args.training_data:
-                name_attribute_list = {'http://www.wikidata.org/entity/P373', 'http://www.wikidata.org/entity/P1476'}
-            else:
-                name_attribute_list = {}
+    def _get_local_name_by_only_name_triple(self):
+        if 'D_Y' in self.args.training_data:
+            return self._get_no_name()
+        if 'D_W' in self.args.training_data:
+            return self._get_no_name()
+
+        id_ent_dict = {} # ent_id2name
+        for e, e_id in self.kgs.kg1.entities_id_dict.items():
+            id_ent_dict[e_id] = e
+        for e, e_id in self.kgs.kg2.entities_id_dict.items():
+            id_ent_dict[e_id] = e
+
+        local_name_dict = {}
+        ents = self.kgs.kg1.entities_set | self.kgs.kg2.entities_set # ids
+        for e in ents:
+            local_name_dict[e] = id_ent_dict[e].split('/')[-1].replace('_', ' ')
+
+        name_triples = list()
+        for e, n in local_name_dict.items():
+            name_triples.append((e, -1, n))
+        return name_triples
+
+    def _get_no_name(self):
+        local_name_dict = {}
+        ents = self.kgs.kg1.entities_set | self.kgs.kg2.entities_set # ids
+        for e in ents:
+            local_name_dict[e] = 'none'
+
+        name_triples = list()
+        for e, n in local_name_dict.items():
+            name_triples.append((e, -1, n))
+        return name_triples
+
+
+
+    def _get_local_name_by_name_triple(self): 
+        if 'D_Y' in self.args.training_data:
+            name_attribute_list = {'skos:prefLabel', 'http://dbpedia.org/ontology/birthName'}
+        elif 'D_W' in self.args.training_data:
+            name_attribute_list = {'http://www.wikidata.org/entity/P373', 'http://www.wikidata.org/entity/P1476'}
+        else:
+            name_attribute_list = {}
 
         # alignON two set of ids of triples 
         local_triples = self.kgs.kg1.local_attribute_triples_set | self.kgs.kg2.local_attribute_triples_set
+        if len(local_triples) == 0:
+            return self._get_local_name_by_only_name_triple()
+
         triples = list()
         for h, a, v in local_triples:
             v = v.strip('"')
@@ -437,7 +478,13 @@ class Trainer(BasicModel):
         model = self
 
         # name_triples is a set of (entity_id, -1, preprocessed_entity_name)
-        name_triples = self._get_local_name_by_name_triple()
+        if self.args.no_name_info:
+            name_triples = self._get_no_name()
+        elif self.args.no_attr_info:
+            name_triples = self._get_local_name_by_only_name_triple()
+        else:
+            name_triples = self._get_local_name_by_name_triple()
+
 
         # preprocess more names; name[:,0] = entity_ids; name[:, 2] = entity_name
         names = pd.DataFrame(name_triples)

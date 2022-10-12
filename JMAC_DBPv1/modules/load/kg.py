@@ -57,7 +57,6 @@ class KG:
         self.set_attributes(attribute_triples)
 
         
-
     def update_linkpred_info(self, valid, test):
         self.lp_valid = set(valid)
         self.lp_test = set(test)

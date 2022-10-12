@@ -50,6 +50,8 @@ parser.add_argument('--completion_map_weight', type=float, default=50)
 parser.add_argument('--max_epoch', type=int, default=200)
 parser.add_argument('--eval_freq', type=int, default=10)
 parser.add_argument('--logger', type=str, default="")
+parser.add_argument('--no_attr_info', action='store_true', help='whether to exclude attribute information')
+parser.add_argument('--no_name_info', action='store_true', help='whether to exclude name information')
 
 
 args = parser.parse_args()

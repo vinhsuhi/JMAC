@@ -270,7 +270,8 @@ def embed2file(results_folder, file_name, embedding, kg1_id_dict, kg2_id_dict, s
 def read_attribute_triples(file_path, logger):
     if file_path is None:
         return set(), set(), set()
-    if file_path is None:
+    if not os.path.exists(file_path):
+        logger.log('Attribute triple file does not exist!')
         return set(), set(), set()
     triples = set()
     entities, attributes = set(), set()
