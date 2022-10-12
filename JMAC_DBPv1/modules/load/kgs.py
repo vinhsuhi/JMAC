@@ -63,16 +63,16 @@ def read_kgs_from_folder(training_data_folder, division, mode, ordered, linkpred
 
     kg1_relation_triples, _, _ = read_relation_triples(kg1_path_train, logger) # name_relation_triples
     kg2_relation_triples, _, _ = read_relation_triples(kg2_path_train, logger) # name_relation_triples
-    kg1_attribute_triples, _, _ = read_attribute_triples(training_data_folder + 'attr_triples_1', logger) # name_attribute_triples
-    kg2_attribute_triples, _, _ = read_attribute_triples(training_data_folder + 'attr_triples_2', logger) # name_attribute_triples
+    #kg1_attribute_triples, _, _ = read_attribute_triples(training_data_folder + 'attr_triples_1', logger) # name_attribute_triples
+    #kg2_attribute_triples, _, _ = read_attribute_triples(training_data_folder + 'attr_triples_2', logger) # name_attribute_triples
 
     # read groundtruth
     train_links = read_links(training_data_folder + division + 'train_links', logger)
     valid_links = read_links(training_data_folder + division + 'valid_links', logger)
     test_links = read_links(training_data_folder + division + 'test_links', logger)
 
-    kg1 = KG(kg1_relation_triples, kg1_attribute_triples)
-    kg2 = KG(kg2_relation_triples, kg2_attribute_triples)
+    kg1 = KG(kg1_relation_triples)
+    kg2 = KG(kg2_relation_triples)
 
     kgs = KGs(kg1, kg2, train_links, test_links, valid_links=valid_links, mode=mode, ordered=ordered, linkpred=linkpred)
     return kgs
