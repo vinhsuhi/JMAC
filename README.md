@@ -6,18 +6,6 @@
 
 > Knowledge graph (KG) alignment and completion are usually treated as two independent tasks. While recent work has leveraged entity and relation alignments from multiple KGs, such as alignments between multilingual KGs with common entities and relations, a deeper understanding of the ways in which multilingual KG completion (MKGC) can aid the creation of multilingual KG alignments (MKGA) is still limited. Motivated by the observation that structural inconsistencies -- the main challenge for MKGA models -- can be mitigated through KG completion methods, we propose a novel model for jointly completing and aligning knowledge graphs. The proposed model combines two components that jointly accomplish KG completion and alignment. These two components employ relation-aware graph neural networks that we propose to encode multi-hop neighborhood structures into entity and relation representations. Moreover, we also propose (i) a structural inconsistency reduction mechanism to incorporate information from the completion into the alignment component, and (ii) an alignment seed enlargement and triple transferring mechanism to enlarge alignment seeds and transfer triples during KGs alignment. Extensive experiments on a public multilingual benchmark show that our proposed model outperforms existing competitive baselines, obtaining new state-of-the-art results on both MKGC and MKGA tasks.
 
-<!--
-Short readme might not need the Table of content
-##### Table of Content
-
-1. [Introduction](#overview)
-2. [Getting Started](#getting-started)
-    - [Datasets](#datasets)
-    - [Installation](#installation)
-3. [Experiments](#experiments)
-    - [Training & Testing](#training-and-testing)
-4. [Citations](#citations)
--->
 
 # Overview
 
@@ -44,7 +32,9 @@ Details of the model architecture and experimental results can be found in [our 
 ## Getting Started
 
 ### Datasets
+
 We use [DBP-5L](https://github.com/vinhsuhi/JMAC/tree/master/datasetdbp5l). The structure of the dataset is listed as follows:
+
 
 ```
 datasetdbp5l/:
