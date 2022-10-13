@@ -31,7 +31,7 @@ Details of the model architecture and experimental results can be found in [our 
 ## Getting Started
 
 ### Datasets
-We use [DBP-5L](https://github.com/vinhsuhi/JMAC/tree/master/datasetdbp5l). The dataset is already included in this repository. We noticed in the original dataset [PDB-5L](https://www.cse.iitb.ac.in/~soumen/doc/AlignKGC/DBP-5L.zip) there are a small amout of duplicate alignment seeds. We already elimilated these errors and saved to this repository. The structure of the dataset is listed as follows:
+We use [DBP-5L](https://github.com/vinhsuhi/JMAC/tree/master/datasetdbp5l). The dataset is included in this repository. The structure of the dataset is listed as follows:
 
 ```
 datasetdbp5l/:
@@ -48,7 +48,7 @@ datasetdbp5l/:
 ├── relation.txt: set of relations
 ```
 
-Before running the code, please download the pretrained word embedder [wiki-news-300d-1M.vec.zip](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip) and extract it to 'JMAC/.'
+Before running the code, please download the pre-trained word embedder [wiki-news-300d-1M.vec.zip](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip) and extract it to 'JMAC/.'
 
 We also develop a version for running KG alignment on the [DBPv1 (OpenEAv1) dataset](https://www.dropbox.com/s/nzjxbam47f9yk3d/OpenEA_dataset_v1.1.zip?dl=0). Please try [JMAC_DBPv1](https://github.com/vinhsuhi/JMAC/tree/master/JMAC_DBPv1) to reproduce our alignment results on the DPBv1 dataset.
 
