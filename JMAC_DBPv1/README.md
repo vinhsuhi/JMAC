@@ -4,25 +4,11 @@
 [![made-with-Pytorch](https://img.shields.io/badge/Made%20with-Pytorch-red.svg?style=flat-square)](https://www.pytorch.org/)
 [![Paper](https://img.shields.io/badge/EMNLP%202022-PDF-yellow.svg?style=flat-square)](https://www.pytorch.org)
 
-> This is the implementation of JMAC for the widely used KG alignment dataset OpenEA_dataset_v1.1.
-
-
-## Table of contents
-1. [Overview](#overview)
-2. [Dataset](#dataset)
-3. [Dependencies](#dependencies)
-4. [Usage](#usage)
-5. [Citation](#citation)
-
-
-## Overview
-
-We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/) to implement a Knowledge Graph Matching algorithm named **OpenEA_JMAC** for the KG alignment dataset DBPv1. 
-
+> JMAC for the benchmark dataset OpenEA_dataset_v1.1.
 
 ## Dataset
 
-The datasets used in this paper are introduced in [here](https://github.com/nju-websoft/OpenEA) can be downloaded from [Dropbox](https://www.dropbox.com/s/nzjxbam47f9yk3d/OpenEA_dataset_v1.1.zip?dl=0). Download Pretrained word vectors at [here](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip), unzip it and save to the datasets folder.
+The dataset is introduced [here](https://github.com/nju-websoft/OpenEA) and can be downloaded from [Dropbox](https://www.dropbox.com/s/nzjxbam47f9yk3d/OpenEA_dataset_v1.1.zip?dl=0). Download the pre-trained word vectors file [wiki-news-300d-1M.vec.zip](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M.vec.zip), unzip it and save it to the datasets folder.
 
 The directory structure of each dataset is listed as follows (an example for EN_FR_15K_V1 dataset):
 
@@ -66,13 +52,16 @@ python main_with_args.py --training_data datasets/D_W_15K_V1/
 ```
 
 ## Citation
-If you find the our implementation useful, please kindly cite the following paper:
+Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://github.com/vinhsuhi/JMAC):
 
 ```
-@article{tong2022jmac,
-  title={Joint Multilingual Knowledge Graph Completion and Alignment},
-  author={Tong, Vinh and Nguyen, Dat Quoc and Trung, Huynh Thanh and Nguyen, Thanh Tam and Nguyen, Quoc Viet Hung and Mathias, Niepert},
-  journal={Findings of the Association for Computational Linguistics: EMNLP 2022},
-  year={2022}
+@inproceedings{tong2022jmac,
+  title     = {{Joint Multilingual Knowledge Graph Completion and Alignment}},
+  author    = {Tong, Vinh and Nguyen, Dat Quoc and Trung, Huynh Thanh and Nguyen, Thanh Tam and Nguyen, Quoc Viet Hung and Mathias, Niepert},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2022},
+  year      = {2022}
 }
 ```
+
+**Please CITE** our paper whenever our JMAC is used to help produce published results or incorporated into other software.
+
