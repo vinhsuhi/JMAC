@@ -271,7 +271,7 @@ def read_attribute_triples(file_path, logger):
     if file_path is None:
         return set(), set(), set()
     if not os.path.exists(file_path):
-        logger.log('Attribute triple file does not exist!')
+        logger.info('Attribute triple file does not exist!')
         return set(), set(), set()
     triples = set()
     entities, attributes = set(), set()

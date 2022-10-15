@@ -309,8 +309,14 @@ class Trainer(BasicModel):
         
 
     def valid_(self, stop_metric, embedding, part=1, in_list=[]):
-        embeds1 = np.array([embedding[e] for e in self.kgs.valid_entities1])
-        embeds2 = np.array([embedding[e] for e in self.kgs.valid_entities2 + self.kgs.test_entities2])
+        if len(self.kgs.valid_entities1) == 0:
+            valid_entities1 = self.kgs.test_entities1
+            valid_entities2 = self.kgs.test_entities2
+        else:
+            valid_entities1 = self.kgs.valid_entities1 
+            valid_entities2 = self.kgs.valid_entities2 + self.kgs.test_entities2
+        embeds1 = np.array([embedding[e] for e in valid_entities1])
+        embeds2 = np.array([embedding[e] for e in valid_entities2])
         hits1_12, mrr_12 = valid(embeds1, embeds2, None, self.args.top_k, self.args.test_threads_num,
                                  metric=self.args.eval_metric, logger=self.logger)
         in_list.append(hits1_12)
@@ -348,6 +354,7 @@ class Trainer(BasicModel):
             name = "{}_ent_emb_no_att.npy".format(self.args.training_data)
         elif self.args.no_name_info:
             name = "{}_ent_emb_no_name.npy".format(self.args.training_data)
+            return torch.FloatTensor(np.zeros((30000, 300)) + 0.03).to(self.device)
         if not os.path.exists(name):
             _, _, self.local_name_vectors = self._get_desc_input()
             np.save(name, self.local_name_vectors)
@@ -480,6 +487,7 @@ class Trainer(BasicModel):
         # name_triples is a set of (entity_id, -1, preprocessed_entity_name)
         if self.args.no_name_info:
             name_triples = self._get_no_name()
+            return None, None, np.zeros((30000, 300))
         elif self.args.no_attr_info:
             name_triples = self._get_local_name_by_only_name_triple()
         else:

@@ -47,7 +47,7 @@ parser.add_argument('--completion_batch_size', type=int, default=1000)
 parser.add_argument('--completion_learning_rate', type=float, default=0.001)
 parser.add_argument('--completion_map_weight', type=float, default=50)
 
-parser.add_argument('--max_epoch', type=int, default=200)
+parser.add_argument('--max_epoch', type=int, default=300)
 parser.add_argument('--eval_freq', type=int, default=10)
 parser.add_argument('--logger', type=str, default="")
 parser.add_argument('--no_attr_info', action='store_true', help='whether to exclude attribute information')
@@ -102,7 +102,10 @@ class Logger:
 
 
 if __name__ == '__main__':
-    args.name = args.training_data.split('/')[-2]
+    extend_name = ''
+    if args.no_name_info:
+        extend_name = 'noname'
+    args.name = args.training_data.split('/')[-2] + extend_name + str(args.pair_sample_weight)
     logger = Logger(args.name, logging.INFO, True, True)
     kgs = read_kgs_from_folder(args.training_data, args.dataset_division, args.alignment_module, args.ordered, linkpred=False, logger=logger)
     trainer = Trainer()
