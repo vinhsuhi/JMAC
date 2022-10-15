@@ -98,6 +98,7 @@ def parse_args(args=None):
 
     parser.add_argument('--device', type=str, default='cuda', choices=['cuda', 'cpu'], help='Whether to run the model using GPU (cuda) or CPU (cpu)')
     parser.add_argument('--logger', type=str, default="")
+    parser.add_argument('--no_name_info, action='store_true', help='whether not use SI info')
     return parser.parse_args(args)
 
 
@@ -540,6 +541,9 @@ def main(args, logger):
 
 if __name__ == "__main__":
     args = parse_args()
+    name = args.target_language
+    if args.no_name_info:
+        name += 'no_name'
     logger = Logger(args.target_language, logging.INFO, True, True)
     logger.info("hello")
     main(args, logger)
