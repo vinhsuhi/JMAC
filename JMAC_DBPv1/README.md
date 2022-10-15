@@ -48,8 +48,14 @@ OpenEA_dataset_v1.1/:
 To reproduce our experiments, please use the following script:
 
 ```bash
-python main_with_args.py --training_data datasets/D_W_15K_V1/ 
+# w/ SI 
+python main_with_args.py --training_data datasets/EN_FR_15K_V1/ 
+# w/o SI
+python main_with_args.py --training_data datasets/EN_FR_15K_V1/ --no_name_info
 ```
+
+
+
 
 ## Citation
 Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://github.com/vinhsuhi/JMAC):
