@@ -163,8 +163,10 @@ class JMAC(BaseModel):
         self.rel_linear11_uni, self.rel_linear12_uni = get_param((self.entity_dim, self.entity_dim)), get_param((self.entity_dim, self.entity_dim))
         self.all_linear_completion = get_param((self.entity_dim * (args.num_gcn_layer + 1), self.entity_dim))
 
-        self.forward_base = self.forward_name # set to self.forward_no_name if run with no name emb
-
+        if not self.args.no_name_info:
+            self.forward_base = self.forward_name 
+        else:
+            self.forward_base = self.forward_no_name
         
 
     def forward_name(self, edge_index, edge_type, ent_bases, rel_bases):
