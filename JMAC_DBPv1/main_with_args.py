@@ -104,8 +104,8 @@ class Logger:
 if __name__ == '__main__':
     extend_name = ''
     if args.no_name_info:
-        extend_name = 'noname'
-    args.name = args.training_data.split('/')[-2] + extend_name + str(args.pair_sample_weight)
+        extend_name = 'no_name'
+    args.name = args.training_data.split('/')[-2] + extend_name)
     logger = Logger(args.name, logging.INFO, True, True)
     kgs = read_kgs_from_folder(args.training_data, args.dataset_division, args.alignment_module, args.ordered, linkpred=False, logger=logger)
     trainer = Trainer()
