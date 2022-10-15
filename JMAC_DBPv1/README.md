@@ -51,7 +51,7 @@ To reproduce our experiments, please use the following script:
 # w/ SI 
 python main_with_args.py --training_data datasets/EN_FR_15K_V1/ 
 # w/o SI
-python main_with_args.py --training_data datasets/EN_FR_15K_V1/ --no_name_info
+python main_with_args.py --training_data datasets/EN_FR_15K_V1/ --no_name_info --completion_dropout_rate 0.1
 ```
 
 
