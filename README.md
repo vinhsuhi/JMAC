@@ -71,8 +71,11 @@ pip install -r requirements.txt
 
 To reproduce our experiments, please use the following script:
 
-```
+```bash
+# w/ SI
 python train.py --data_path datasetdbp5l/ --target_language ja 
+# w/o SI
+python train.py --data_path datasetdbp5l/ --target_language ja --no_name_info --dropout 0.1
 ```
 
 
