@@ -15,7 +15,7 @@ We use [Python](https://www.python.org/) and [Pytorch](https://www.pytorch.org/)
 <img src="./figs/JMAC-Framework.png" width="600">
 </p>
 
-Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://github.com/vinhsuhi/JMAC):
+Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://arxiv.org/abs/2210.08922):
 
 ```
 @inproceedings{tong2022jmac,
