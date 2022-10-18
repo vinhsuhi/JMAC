@@ -58,7 +58,7 @@ python main_with_args.py --training_data datasets/EN_FR_15K_V1/ --no_name_info -
 
 
 ## Citation
-Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://github.com/vinhsuhi/JMAC):
+Details of the model architecture and experimental results can be found in [our EMNLP 2022 Findings paper](https://arxiv.org/abs/2210.08922):
 
 ```
 @inproceedings{tong2022jmac,
