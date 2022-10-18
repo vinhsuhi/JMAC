@@ -1,4 +1,4 @@
-# [JMAC for DBPv1 (OpenEA_dataset_v1.1) dataset](https://www.pytorch.org)
+# [JMAC for DBPv1 (OpenEA_dataset_v1.1) dataset](https://arxiv.org/abs/2210.08922)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=flat-square)](https://www.pytorch.org)
 [![language-python3](https://img.shields.io/badge/Language-Python3-blue.svg?style=flat-square)](https://www.python.org/)
 [![made-with-Pytorch](https://img.shields.io/badge/Made%20with-Pytorch-red.svg?style=flat-square)](https://www.pytorch.org/)
